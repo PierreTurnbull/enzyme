@@ -12,8 +12,6 @@ NOTE: this does not force a re-render. Use `wrapper.setProps({})` to force a re-
 
 `ReactWrapper`: Returns itself.
 
-
-
 #### Example
 
 ```jsx
@@ -38,12 +36,12 @@ class UpdateEnzyme extends React.Component {
 }
 ```
 ```jsx
-const wrapper = mount(<UpdateEnzyme />);
+let wrapper = mount(<UpdateEnzyme />);
 expect(wrapper.find('button.increment').text()).to.equal('0');
 wrapper.instance().increment();
 
 // Update Enzyme's view of output
-wrapper.update();
+wrapper = wrapper.update();
 
 expect(wrapper.find('button.increment').text()).to.equal('1');
 ```
